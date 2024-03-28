@@ -1,14 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>LuaLet's Machine</title>
 </head>
+
 <body>
-    <h1>LuaLet's Machine</h1>
-    <br>
-    Qual o número para conversão?
-    <input type="text">
+    <div class="div-container">
+        <h1>LuaLet's Machine</h1>
+        <br>
+        <div class="div-formulario">
+            <span>Qual o número para conversão? </span>
+            <input type="text" id="input_numero_conversao">
+            <select id="select_bases" class="select-base-conversao">
+                <option value="10">Decimal</option>
+                <option value="2">Binário</option>
+                <option value="8">Octal</option>
+                <option value="16">Hexadecimal</option>
+            </select>
+            <br> <br>
+            <span class="span-pergunta">
+                Decimal <input id="input_decimal" type="checkbox" class="checkbox-opcoes"> <br>
+                Binário <input id="input_binário" type="checkbox" class="checkbox-opcoes"> <br>
+                Octal <input id="input_octal" type="checkbox" class="checkbox-opcoes"> <br>
+                Hexadecimal <input id="input_hexadecimal" type="checkbox" class="checkbox-opcoes"> <br>
+            </span>
+            <br>
+            <button onclick="RealizarConversão()"  class="button-calcular">Realizar conversão</button>
+        </div>
+        <div class="div-saida"   >
+            <span class="span-pergunta" id="span-resposta"></span>
+        </div>
+    </div>
 </body>
+
 </html>
+
+<script>
+    function RealizarConversão() {
+        let numeroParaConverter = 
+
+    }
+</script>
