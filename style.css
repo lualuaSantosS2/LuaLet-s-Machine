@@ -29,6 +29,7 @@ h1{
     margin: 5%;
 }
 .input-numero{
+    margin-top: 2%;
     border: none;
     outline: none;
     border-bottom: 1px solid black;
@@ -49,15 +50,18 @@ h1{
     margin: 5%;
 }
 .select-base-conversao{
+    margin-top: 2%;
     width: 40%;
     font-size: 120%;
     border-radius: 10px;
     background-color: #FFF;
+    
 }
 .div-alinhar{
     display: flex;
     flex-direction: row;
     background-color: #FFF;
+    width: 50vw;
 
 }
 .checkbox-opcoes{
@@ -71,5 +75,5 @@ h1{
     background-color: #FFF;
 }
 .div-saida span{
-    font-size: 190%;
+    font-size: 100%;
 }
