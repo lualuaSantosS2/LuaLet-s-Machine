@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(234, 121, 212);
+}
+.div-container{
+    display: flex;
+    flex-direction: row;
+}
+.div-formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF;
+    border-radius: 10px;
+}
+.div-saida{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF;
+    border-radius: 10px;
+}
+.select-base-conversao{
+    width: 40%;
+    font-size: 120%;
+    border-radius: 10px;
+}
+.button-calcular{
+    background-color: black;
+    color: #FFF;
+    width: 50%;
+    height: 6%;
+    font-size: 120%;
+}
+.checkbox-opcoes{
+    width: 20%;
+    height: 20%;
+    margin-top: 1%;
+}
+.span-pergunta{
+    font-size: 100%;
+}
+.div-saida span{
+    font-size: 190%;
+}
