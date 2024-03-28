@@ -2,11 +2,20 @@
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+
+}
+body{
     background-color: rgb(234, 121, 212);
 }
 .div-container{
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
+}
+h1{
+    text-align: center;
+    margin-bottom: 4%;
+    background-color: #FFF;
 }
 .div-formulario{
     display: flex;
@@ -15,34 +24,51 @@
     align-items: center;
     background-color: #FFF;
     border-radius: 10px;
+    width: 40vw;
+    height: 70vh;
+    margin: 5%;
+}
+.input-numero{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    background-color: #FFF;
+    width: 50%;
+    margin-bottom: 2%;
 }
 .div-saida{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     background-color: #FFF;
     border-radius: 10px;
+    width: 40vw;
+    height: 70vh;
+    margin: 5%;
 }
 .select-base-conversao{
     width: 40%;
     font-size: 120%;
     border-radius: 10px;
+    background-color: #FFF;
 }
-.button-calcular{
-    background-color: black;
-    color: #FFF;
-    width: 50%;
-    height: 6%;
-    font-size: 120%;
+.div-alinhar{
+    display: flex;
+    flex-direction: row;
+    background-color: #FFF;
+
 }
 .checkbox-opcoes{
     width: 20%;
     height: 20%;
     margin-top: 1%;
+    background-color: #FFF;
 }
 .span-pergunta{
     font-size: 100%;
+    background-color: #FFF;
 }
 .div-saida span{
     font-size: 190%;

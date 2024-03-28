@@ -10,11 +10,11 @@
 
 <body>
     <div class="div-container">
-        <h1>LuaLet's Machine</h1>
-        <br>
+        
         <div class="div-formulario">
-            <span>Qual o número para conversão? </span>
-            <input type="text" id="input_numero_conversao">
+            <h1>LuaLet's Machine</h1>
+            <span class="span-pergunta">Qual o número para conversão? </span>
+            <input class="input-numero" type="text" id="input_numero_conversao">
             <select id="select_bases" class="select-base-conversao">
                 <option value="10">Decimal</option>
                 <option value="2">Binário</option>
@@ -22,16 +22,14 @@
                 <option value="16">Hexadecimal</option>
             </select>
             <br> <br>
-            <span class="span-pergunta">
-                Decimal <input id="input_decimal" type="checkbox" class="checkbox-opcoes"> <br>
-                Binário <input id="input_binário" type="checkbox" class="checkbox-opcoes"> <br>
-                Octal <input id="input_octal" type="checkbox" class="checkbox-opcoes"> <br>
-                Hexadecimal <input id="input_hexadecimal" type="checkbox" class="checkbox-opcoes"> <br>
-            </span>
-            <br>
-            <button onclick="RealizarConversão()"  class="button-calcular">Realizar conversão</button>
+           <div id="div-alinhar">
+            <span class="span-pergunta">Decimal <input id="input_decimal" type="checkbox" class="checkbox-opcoes"> <br></span>
+            <span class="span-pergunta">Binário <input id="input_binário" type="checkbox" class="checkbox-opcoes"> <br></span>
+            <span class="span-pergunta">Octal <input id="input_octal" type="checkbox" class="checkbox-opcoes"> <br></span>
+            <span class="span-pergunta">Hexadecimal <input id="input_hexadecimal" type="checkbox" class="checkbox-opcoes"></span>
+           </div> 
         </div>
-        <div class="div-saida"   >
+        <div class="div-saida">
             <span class="span-pergunta" id="span-resposta"></span>
         </div>
     </div>
