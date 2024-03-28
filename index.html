@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> 
     <title>LuaLet's Machine</title>
 </head>
 
 <body>
+
     <div class="div-container">
         <h1>LuaLet's Machine</h1>
         <br>
@@ -23,16 +24,16 @@
             </select>
             <br> <br>
             <span class="span-pergunta">
-                Decimal <input id="input_decimal" type="checkbox" class="checkbox-opcoes"> <br>
-                Binário <input id="input_binário" type="checkbox" class="checkbox-opcoes"> <br>
-                Octal <input id="input_octal" type="checkbox" class="checkbox-opcoes"> <br>
-                Hexadecimal <input id="input_hexadecimal" type="checkbox" class="checkbox-opcoes"> <br>
+                Decimal <input id="input_decimal" onchange="AparecerDecimal()" type="checkbox" class="checkbox-opcoes"> <br>
+                Binário <input id="input_binário" onchange="AparecerBinario()" type="checkbox" class="checkbox-opcoes"> <br>
+                Octal <input id="input_octal" onchange="AparecerOctal()"    type="checkbox" class="checkbox-opcoes"> <br>
+                Hexadecimal <input id="input_hexadecimal" onchange="AparecerHexadecimal()" type="checkbox" class="checkbox-opcoes"> <br>
             </span>
             <br>
-            <button onclick="RealizarConversão()"  class="button-calcular">Realizar conversão</button>
+           
         </div>
         <div class="div-saida"   >
-            <span class="span-pergunta" id="span-resposta"></span>
+            <span class="span-pergunta" id="span_resposta"></span>
         </div>
     </div>
 </body>
@@ -40,8 +41,35 @@
 </html>
 
 <script>
-    function RealizarConversão() {
-       
-
+   
+    function AparecerDecimal() {
+        let numero = input_numero_conversao.value;
+        let base = select_bases.value;
+        let numeroParaConversao = parseInt(numero,base);
+        let decimal = numeroParaConversao.toString(10);
+        
+        span_resposta.innerHTML = `O número pedido para converter foi o ${numero} na base (${base}) e convertido para base 10 é ${decimal} <br>`
     }
-</script>
+    function AparecerBinario(){
+        let numero = input_numero_conversao.value;
+        let base = select_bases.value;
+        let numeroParaConversao = parseInt(numero,base);
+        let binaria =  numeroParaConversao.toString(2);
+        span_resposta.innerHTML += `O número pedido para converter foi o ${numero} na base (${base}) e convertido para base 2 é ${binaria} <br>`
+    }
+    function AparecerOctal(){
+        let numero = input_numero_conversao.value;
+        let base = select_bases.value;
+        let numeroParaConversao = parseInt(numero,base);
+        let octal =  numeroParaConversao.toString(8);
+        span_resposta.innerHTML += `O número pedido para converter foi o ${numero} na base (${base}) e convertido para base 8 é ${octal} <br>`
+    }
+    function AparecerHexadecimal(){
+        let numero = input_numero_conversao.value;
+        let base = select_bases.value;
+        let numeroParaConversao = parseInt(numero,base);
+        let hexadecimal = numeroParaConversao.toString(16);
+        span_resposta.innerHTML += `O número pedido para converter foi o ${numero} na base (${base}) e convertido para base 16 é ${hexadecimal} <br>`
+    }
+    
+    </script>
