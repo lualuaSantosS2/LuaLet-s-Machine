@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
     <title>LuaLet's Machine</title>
 </head>
 
 <body>
 
     <div class="div-container">
-        
+
         <div class="div-formulario">
             <h1>LuaLet's Machine</h1>
             <span class="span-pergunta">Qual o número para conversão? </span>
@@ -23,15 +23,21 @@
                 <option value="16">Hexadecimal</option>
             </select>
             <br> <br>
-           <div id="div-alinhar">
-                <span class="span-pergunta"> Decimal <input id="input_decimal" onchange="AparecerDecimal()" type="checkbox" class="checkbox-opcoes"><br></span>
-                <span class="span-pergunta">Binário <input id="input_binário" onchange="AparecerBinario()" type="checkbox" class="checkbox-opcoes"> <br></span>
-                <span class="span-pergunta">Octal <input id="input_octal" onchange="AparecerOctal()"    type="checkbox" class="checkbox-opcoes"> <br></span>
-                <span class="span-pergunta">Hexadecimal <input id="input_hexadecimal" onchange="AparecerHexadecimal()" type="checkbox" class="checkbox-opcoes"></span>
-           </div> 
+            <div id="div-alinhar">
+                <span class="span-pergunta"> Decimal <input id="input_decimal" onchange="AparecerDecimal()"
+                        type="checkbox" class="checkbox-opcoes"><br></span>
+                <span class="span-pergunta">Binário <input id="input_binário" onchange="AparecerBinario()"
+                        type="checkbox" class="checkbox-opcoes"> <br></span>
+                <span class="span-pergunta">Octal <input id="input_octal" onchange="AparecerOctal()" type="checkbox"
+                        class="checkbox-opcoes"> </span>
+                <span class="span-pergunta">Hexadecimal <input id="input_hexadecimal" onchange="AparecerHexadecimal()"
+                        type="checkbox" class="checkbox-opcoes"></span>
+            </div>
         </div>
         <div class="div-saida">
-            <span class="span-pergunta" id="span_resposta"></span>
+            <span class="span-resposta" id="span_resposta"></span>
+
+           
 
         </div>
     </div>
@@ -40,35 +46,84 @@
 </html>
 
 <script>
-   
+
     function AparecerDecimal() {
         let numero = input_numero_conversao.value;
         let base = select_bases.value;
-        let numeroParaConversao = parseInt(numero,base);
+        let numeroParaConversao = parseInt(numero, base);
         let decimal = numeroParaConversao.toString(10);
+
+
+        if (!validarEntrada(numero, base)) {
+            alert('Por favor, insira um número válido para a base selecionada.');
+            return;
+        } else {
+            span_resposta.innerHTML = `<p style="color:rgb(234, 121, 212);" >Decimal:</p>${decimal} <br>`
+        }
+
+
+    }
+    function AparecerBinario() {
+        let numero = input_numero_conversao.value;
+        let base = select_bases.value;
+        let numeroParaConversao = parseInt(numero, base);
+        let binario = numeroParaConversao.toString(2);
         
-        span_resposta.innerHTML = `O número pedido para converter foi o ${numero} na base (${base}) e convertido para base 10 é ${decimal} <br>`
+
+        if (!validarEntrada(numero, base)) {
+            alert('Por favor, insira um número válido para a base selecionada.');
+            return;
+        } else {
+            span_resposta.innerHTML += `<p style="color:rgb(234, 121, 212);" >Binário:</p>${binario} <br>`
+        }
     }
-    function AparecerBinario(){
+    function AparecerOctal() {
         let numero = input_numero_conversao.value;
         let base = select_bases.value;
-        let numeroParaConversao = parseInt(numero,base);
-        let binaria =  numeroParaConversao.toString(2);
-        span_resposta.innerHTML += `O número pedido para converter foi o ${numero} na base (${base}) e convertido para base 2 é ${binaria} <br>`
+        let numeroParaConversao = parseInt(numero, base);
+        let octal = numeroParaConversao.toString(8);
+      
+        if (!validarEntrada(numero, base)) {
+            alert('Por favor, insira um número válido para a base selecionada.');
+            return;
+        } else {
+            span_resposta.innerHTML += `<p style="color:rgb(234, 121, 212);" >Octal:</p>${octal} <br>`
+        }
     }
-    function AparecerOctal(){
+    function AparecerHexadecimal() {
         let numero = input_numero_conversao.value;
         let base = select_bases.value;
-        let numeroParaConversao = parseInt(numero,base);
-        let octal =  numeroParaConversao.toString(8);
-        span_resposta.innerHTML += `O número pedido para converter foi o ${numero} na base (${base}) e convertido para base 8 é ${octal} <br>`
+        let numeroParaConversao = parseInt(numero, base);
+        let hexadecimal = numeroParaConversao.toString(16).toUpperCase();
+       
+
+        if (!validarEntrada(numero, base)) {
+            alert('Por favor, insira um número válido para a base selecionada.');
+            return;
+        } else {
+            span_resposta.innerHTML += `<p style="color:rgb(234, 121, 212);" >Hexadecimal:</p>${hexadecimal} <br>`
+        }
     }
-    function AparecerHexadecimal(){
-        let numero = input_numero_conversao.value;
-        let base = select_bases.value;
-        let numeroParaConversao = parseInt(numero,base);
-        let hexadecimal = numeroParaConversao.toString(16);
-        span_resposta.innerHTML += `O número pedido para converter foi o ${numero} na base (${base}) e convertido para base 16 é ${hexadecimal} <br>`
+    function validarEntrada(input_numero_conversao, select_bases) {
+
+        var validChars = '';
+
+        if (select_bases === '10') {
+            validChars = '0123456789';
+        } else if (select_bases === '16') {
+            validChars = '0123456789ABCDEFabcdef';
+        } else if (select_bases === '8') {
+            validChars = '01234567';
+        } else if (select_bases === '2') {
+            validChars = '01';
+        }
+
+        for (var i = 0; i < input_numero_conversao.length; i++) {
+            if (validChars.indexOf(input_numero_conversao[i]) === -1) {
+                return false;
+            }
+        }
+        return true;
+
     }
-    
-    </script>
+</script>

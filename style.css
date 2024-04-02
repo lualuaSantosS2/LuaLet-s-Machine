@@ -29,6 +29,7 @@ h1{
     margin: 5%;
 }
 .input-numero{
+    text-align: center;
     margin-top: 2%;
     border: none;
     outline: none;
@@ -71,8 +72,14 @@ h1{
     background-color: #FFF;
 }
 .span-pergunta{
-    font-size: 100%;
+    font-size: 150%;
     background-color: #FFF;
+}
+.span-resposta{
+    font-size: 100%;
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 .div-saida span{
     font-size: 100%;
