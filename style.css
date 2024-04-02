@@ -84,3 +84,19 @@ h1{
 .div-saida span{
     font-size: 100%;
 }
+.btn-limpar{
+    margin-top: 5%;
+    font-size: 90%;
+    background-color: transparent;
+    border-color: black;
+    border: 2px solid black;
+    width: 20vw;
+    height: 6vh;
+    color: black;
+    border-radius: 15px;
+}
+.btn-limpar:hover{
+    transform: scale(1, 1.2);
+    background-color: black;
+    color: #FFF;
+}

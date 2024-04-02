@@ -33,12 +33,11 @@
                 <span class="span-pergunta">Hexadecimal <input id="input_hexadecimal" onchange="AparecerHexadecimal()"
                         type="checkbox" class="checkbox-opcoes"></span>
             </div>
+            <button class="btn-limpar" onclick="limparResposta()">LIMPAR</button>
         </div>
         <div class="div-saida">
+            <h1>Saída das respostas aqui...</h1>
             <span class="span-resposta" id="span_resposta"></span>
-
-           
-
         </div>
     </div>
 </body>
@@ -58,7 +57,7 @@
             alert('Por favor, insira um número válido para a base selecionada.');
             return;
         } else {
-            span_resposta.innerHTML = `<p style="color:rgb(234, 121, 212);" >Decimal:</p>${decimal} <br>`
+            span_resposta.innerHTML += `<p style="color:rgb(234, 121, 212);" >Decimal:</p>${decimal} <br>`
         }
 
 
@@ -125,5 +124,8 @@
         }
         return true;
 
+    }
+    function limparResposta(){
+        span_resposta.innerHTML = ` `;
     }
 </script>
